@@ -1,0 +1,42 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  title JDLT Tech Challenge
+  link(href='../../node_modules/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' type="text/css")
+
+  link(href='../../views/css/dashboard.css' rel='stylesheet')
+.container-fluid
+
+  .row
+    .col-sm-12.col-md-12.main
+      h1.page-header Product pricing
+      form
+        .row
+          .form-group.col-md-6
+            label(for='selSupplier') Supplier
+            select.form-control(name='supplierName')
+              option
+              - for(item in suppliers)
+                option(value=suppliers[item])=suppliers[item]
+          .form-group.col-md-6
+            label(for='selProduct') Product
+            select.form-control(name='productName')
+              option
+              - for(item in products)
+                option(value=products[item])=products[item]
+      h2.sub-header Product details
+      .table-responsive
+        table.table.table-striped
+          thead
+            tr
+              th #
+              th Supplier
+              th Product
+              th Price
+          tbody
+
+script(src='../../node_modules/jquery/dist/jquery.min.js')
+script(src='../../node_modules/bootstrap/dist/js/bootstrap.min.js')
+script(src='../../views/js/index.js')
